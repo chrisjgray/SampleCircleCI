@@ -33,7 +33,7 @@ jobs:
             . venv/bin/activate
       - run:
           name: install snyk
-          command: npm install -g snyk
+          command: sudo npm install -g snyk
       - save_cache:
           paths:
             - ./venv
