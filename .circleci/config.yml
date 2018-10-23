@@ -32,7 +32,9 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-
+      - run:
+          name: install snyk
+          command: npm install -g snyk
       - save_cache:
           paths:
             - ./venv
@@ -48,7 +50,9 @@ jobs:
           command: |
             . venv/bin/activate
             python HelloWorldTests.py
-
+      - run:
+          name: snyk test
+          command: snyk test
       - store_artifacts:
           path: test-reports
           destination: test-reports
