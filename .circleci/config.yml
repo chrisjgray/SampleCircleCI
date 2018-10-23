@@ -31,6 +31,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
+            pip install -r requirements.txt
       - run:
           name: install snyk
           command: sudo npm install -g snyk
@@ -45,13 +46,16 @@ jobs:
       # https://pytest.org
       # https://nose.readthedocs.io
       - run:
-          name: run tests
+          name: run Unit tests
           command: |
             . venv/bin/activate
             python HelloWorldTests.py
       - run:
           name: snyk test
           command: snyk test
+      - run:
+          name: pep8 linter
+          command: pep8 --show-source --show-pep8 HelloWorld.py
       - store_artifacts:
           path: test-reports
           destination: test-reports

@@ -1,0 +1,2 @@
+marshmallow < 2.15.1
+pep8 >= 1.7.1
