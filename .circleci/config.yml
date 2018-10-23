@@ -51,10 +51,10 @@ jobs:
             . venv/bin/activate
             python HelloWorldTests.py
       - run:
-          name: pep8 linter
+          name: pycodestyle linter
           command: |
             . venv/bin/activate
-            pep8 --show-source --show-pep8 HelloWorld.py
+            pycodestyle --show-source --show-pep8 HelloWorld.py
       - run:
           name: snyk test
           command: snyk test
