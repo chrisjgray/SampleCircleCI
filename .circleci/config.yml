@@ -51,11 +51,11 @@ jobs:
             . venv/bin/activate
             python HelloWorldTests.py
       - run:
-          name: snyk test
-          command: snyk test
-      - run:
           name: pep8 linter
           command: pep8 --show-source --show-pep8 HelloWorld.py
+      - run:
+          name: snyk test
+          command: snyk test
       - store_artifacts:
           path: test-reports
           destination: test-reports
