@@ -59,7 +59,7 @@ jobs:
           name: pycodestyle linter
           command: |
             . venv/bin/activate
-            pycodestyle --show-source --show-pep8 ./HelloWorld.py --output-file test-reports
+            pycodestyle --show-source --show-pep8 ./HelloWorld.py
       - store_artifacts:
           path: test-reports
           destination: test-reports
