@@ -47,7 +47,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python HelloWorldTests.py test
+            python HelloWorldTests.py
 
       - store_artifacts:
           path: test-reports
