@@ -46,6 +46,9 @@ jobs:
       # https://pytest.org
       # https://nose.readthedocs.io
       - run:
+          name: snyk test
+          command: snyk test
+      - run:
           name: run Unit tests
           command: |
             . venv/bin/activate
@@ -54,10 +57,7 @@ jobs:
           name: pycodestyle linter
           command: |
             . venv/bin/activate
-            pycodestyle --show-source --show-pep8 HelloWorld.py
-      - run:
-          name: snyk test
-          command: snyk test
+            pycodestyle --show-source --show-pep8 ./HelloWorld.py
       - store_artifacts:
           path: test-reports
           destination: test-reports
