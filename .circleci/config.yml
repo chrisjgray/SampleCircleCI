@@ -47,7 +47,9 @@ jobs:
       # https://nose.readthedocs.io
       - run:
           name: snyk test
-          command: snyk test
+          command: |
+            . venv/bin/activate
+            snyk test
       - run:
           name: run Unit tests
           command: |
